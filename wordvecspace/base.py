@@ -2,7 +2,7 @@ from abc import ABCMeta, abstractmethod
 
 import numpy as np
 
-class WordVecSpace(object):
+class WordVecSpaceBase(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
@@ -22,43 +22,43 @@ class WordVecSpace(object):
         pass
 
     @abstractmethod
-    def get_word_index(self, word):
+    def get_index(self, word):
         pass
 
     @abstractmethod
-    def get_word_indices(self, words):
+    def get_indices(self, words):
         pass
 
     @abstractmethod
-    def get_word_at_index(self, index):
+    def get_word(self, index):
         pass
 
     @abstractmethod
-    def get_word_at_indices(self, indices):
+    def get_words(self, indices):
         pass
 
     @abstractmethod
-    def get_vector_magnitude(self, word_or_index):
+    def get_magnitude(self, word_or_index):
         pass
 
     @abstractmethod
-    def get_vector_magnitudes(self, words_or_indices):
+    def get_magnitudes(self, words_or_indices):
+        pass
+    
+    @abstractmethod
+    def get_occurrence(self, word_or_index):
         pass
 
     @abstractmethod
-    def get_word_vector(self, word_or_index):
+    def get_occurrences(self, words_or_indices):
         pass
 
     @abstractmethod
-    def get_word_vectors(self, words_or_indices):
+    def get_vector(self, word_or_index):
         pass
 
     @abstractmethod
-    def get_word_occurrence(self, word_or_index):
-        pass
-
-    @abstractmethod
-    def get_word_occurrences(self, words_or_indices):
+    def get_vectors(self, words_or_indices):
         pass
 
     @abstractmethod
@@ -70,5 +70,5 @@ class WordVecSpace(object):
         pass
 
     @abstractmethod
-    def get_nearest(self, words_or_indices, k):
+    def get_nearest(self, v_w_i):
         pass
