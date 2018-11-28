@@ -5,6 +5,7 @@ from typing import Union
 from scipy.spatial import distance
 import numpy as np
 import bottleneck
+import pandas as pd
 
 from .fileformat import WordVecSpaceFile
 from .base import WordVecSpaceBase
