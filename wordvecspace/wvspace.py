@@ -195,7 +195,7 @@ class WordVecSpace(WordVecSpaceBase):
                 res = self._perform_sgemm(row_vectors, col_vectors, mat_out)
 
             if not norm:
-                res = np.multiply(res, self.magnitudes)
+                res = np.multiply(res, self.mags)
                 return res
 
             return 1 - res
