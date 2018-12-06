@@ -178,11 +178,11 @@ class WordVecSpace(WordVecSpaceBase):
         metric, r, c = self._check_r_and_c(r, c, metric)
 
         if metric == 'cosine' or 'angular':
-            row_vectors = self._check_vec(r, True)
+            row_vectors = self._check_vec(r, norm)
 
             col_vectors = self.vecs
             if c is not None and len(c):
-                col_vectors = self._check_vec(c, True)
+                col_vectors = self._check_vec(c, norm)
 
             if len(r) == 1:
                 nvecs, dim = col_vectors.shape
